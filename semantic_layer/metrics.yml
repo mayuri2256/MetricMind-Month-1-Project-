@@ -1,0 +1,33 @@
+metrics:
+  revenue:
+    expression: sum(revenue)
+    description: Total sales revenue in USD
+    format: currency
+  cost:
+    expression: sum(cost)
+    description: Total operating and product cost in USD
+    format: currency
+  profit:
+    expression: sum(revenue - cost)
+    description: Revenue minus cost in USD
+    format: currency
+  margin:
+    expression: sum(revenue - cost) / sum(revenue)
+    description: Profit divided by revenue
+    format: percentage
+dimensions:
+  - date
+  - year
+  - quarter
+  - region
+  - country
+  - product
+  - channel
+allowed_filters:
+  - year
+  - quarter
+  - region
+  - country
+  - product
+  - channel
+max_rows: 1000
